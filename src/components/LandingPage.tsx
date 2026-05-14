@@ -66,7 +66,7 @@ function Hero() {
           Novo <span>Haval H6 GT</span>
           <strong>0km por assinatura</strong>
         </h1>
-        <p>Não é financiamento: seguro, manutenção e documentação inclusos.</p>
+        <p>Tudo incluso para você dirigir sem se preocupar: seguro, manutenção e documentação.</p>
         <div className="hero-price">
           <span>R$</span>
           <strong>5.689</strong>

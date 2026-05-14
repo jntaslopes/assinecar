@@ -350,8 +350,10 @@ button:disabled {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  left: calc(100% - 252px);
+  gap: 8px;
+  height: 225px;
+  justify-content: center;
+  left: 1092px;
   padding: 24px;
   position: absolute;
   top: 73px;
@@ -362,6 +364,7 @@ button:disabled {
 .included-card strong {
   font-size: 16px;
   line-height: 1;
+  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -371,7 +374,9 @@ button:disabled {
   display: flex;
   font-size: 12px;
   gap: 12px;
+  min-height: 24px;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .benefit-strip {
