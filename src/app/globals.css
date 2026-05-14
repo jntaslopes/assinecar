@@ -550,7 +550,7 @@ button:disabled {
   height: 473px;
   overflow: hidden;
   position: relative;
-  width: min(1338px, 100vw);
+  width: 100vw;
 }
 
 .vehicle-track {
@@ -597,11 +597,11 @@ button:disabled {
 }
 
 .vehicle-image--haval-main {
-  height: 201px;
-  left: 52px;
+  height: 224px;
+  left: 40px;
   object-fit: contain !important;
-  top: -14px;
-  width: 305px;
+  top: -22px;
+  width: 330px;
 }
 
 .vehicle-image--toro {
@@ -627,8 +627,8 @@ button:disabled {
 
 .vehicle-plate--haval {
   height: 12px;
-  left: 113px;
-  top: 113px;
+  left: 106px;
+  top: 112px;
   width: 26px;
 }
 
@@ -788,11 +788,11 @@ button:disabled {
 }
 
 .vehicle-arrow--left {
-  left: 0;
+  left: 48px;
 }
 
 .vehicle-arrow--right {
-  right: 0;
+  right: 48px;
 }
 
 .catalog-button {
@@ -1771,7 +1771,7 @@ button:disabled {
   }
 
   .vehicle-image--haval-main {
-    left: calc(50% - 153px);
+    left: calc(50% - 165px);
   }
 
   .vehicle-image--toro {
@@ -1783,9 +1783,12 @@ button:disabled {
   }
 
   .vehicle-plate--argo,
-  .vehicle-plate--haval,
   .vehicle-plate--toro {
     left: calc(50% - 92px);
+  }
+
+  .vehicle-plate--haval {
+    left: calc(50% - 99px);
   }
 
   .vehicle-plate--tracker {
@@ -1796,6 +1799,14 @@ button:disabled {
     height: 48px;
     top: 206px;
     width: 48px;
+  }
+
+  .vehicle-arrow--left {
+    left: 16px;
+  }
+
+  .vehicle-arrow--right {
+    right: 16px;
   }
 
   .advantages-section {
