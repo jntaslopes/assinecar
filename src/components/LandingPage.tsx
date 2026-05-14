@@ -119,9 +119,10 @@ function BenefitStrip() {
 
 function VehicleSection() {
   const [slide, setSlide] = useState(0);
-  const shift = slide === 0 ? "-175px" : "-350px";
-  const tabletShift = slide === 0 ? "-114px" : "-228px";
-  const mobileShift = slide === 0 ? "-40px" : "-68px";
+  const carouselCars = [...cars, ...cars];
+  const shift = `-${slide * 426}px`;
+  const tabletShift = `-${114 + slide * 426}px`;
+  const mobileShift = `calc(${-40 + slide * 20}px - ${slide * 100}vw)`;
 
   return (
     <section className="vehicles-section" id="veiculos">
@@ -144,8 +145,8 @@ function VehicleSection() {
               }
             }
           >
-            {cars.map((car) => (
-              <article className="vehicle-card" key={car.slug}>
+            {carouselCars.map((car, index) => (
+              <article className="vehicle-card" key={`${car.slug}-${index}`}>
                 <div className="vehicle-media">
                   {car.media.map((layer) => (
                     <Image
@@ -200,7 +201,7 @@ function VehicleSection() {
             className="vehicle-arrow vehicle-arrow--left"
             type="button"
             aria-label="Ver carros anteriores"
-            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+            onClick={() => setSlide((current) => (current - 1 + cars.length) % cars.length)}
           >
             <Image src={assets.arrowLeftPurple} alt="" width={24} height={24} />
           </button>
@@ -208,7 +209,7 @@ function VehicleSection() {
             className="vehicle-arrow vehicle-arrow--right"
             type="button"
             aria-label="Ver próximos carros"
-            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+            onClick={() => setSlide((current) => (current + 1) % cars.length)}
           >
             <Image src={assets.arrowRightPurple} alt="" width={24} height={24} />
           </button>

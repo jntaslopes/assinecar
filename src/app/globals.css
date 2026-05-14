@@ -464,7 +464,7 @@ button:disabled {
   height: 473px;
   overflow: hidden;
   position: relative;
-  width: min(1338px, 100vw);
+  width: min(1688px, calc(100vw - 112px));
 }
 
 .vehicle-track {
@@ -511,11 +511,11 @@ button:disabled {
 }
 
 .vehicle-image--haval-main {
-  height: 201px;
-  left: 52px;
+  height: 233px;
+  left: 30px;
   object-fit: contain !important;
-  top: -14px;
-  width: 305px;
+  top: -32px;
+  width: 350px;
 }
 
 .vehicle-image--toro {
@@ -541,8 +541,8 @@ button:disabled {
 
 .vehicle-plate--haval {
   height: 12px;
-  left: 113px;
-  top: 113px;
+  left: 112px;
+  top: 111px;
   width: 26px;
 }
 
@@ -1618,7 +1618,7 @@ button:disabled {
   }
 
   .vehicle-image--haval-main {
-    left: calc(50% - 153px);
+    left: calc(50% - 175px);
   }
 
   .vehicle-image--toro {
@@ -1630,9 +1630,12 @@ button:disabled {
   }
 
   .vehicle-plate--argo,
-  .vehicle-plate--haval,
   .vehicle-plate--toro {
     left: calc(50% - 92px);
+  }
+
+  .vehicle-plate--haval {
+    left: calc(50% - 93px);
   }
 
   .vehicle-plate--tracker {
