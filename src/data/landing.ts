@@ -10,6 +10,8 @@ export const assets = {
   heroCarTrimmed: asset("hero-car-trimmed.png"),
   heroCarB: asset("hero-car-b.png"),
   plateHero: asset("plate-hero.svg"),
+  faqHelp: asset("faq-help.svg"),
+  faqArrowDown: asset("faq-arrow-down.svg"),
   whatsapp: asset("whatsapp.svg"),
   headphones: asset("headphones.svg"),
   footerLogo: asset("footer-logo-white.svg"),
@@ -171,14 +173,54 @@ export const trustStats = [
 ].map(([icon, title, text]) => ({ icon: asset(icon), title, text }));
 
 export const faqs = [
-  "O que está incluso na assinatura do carro?",
-  "Como funciona a assinatura do veículo?",
-  "Quais documentos preciso para contratar?",
-  "Posso escolher o prazo e a quilometragem do plano?",
-  "A manutenção do veículo está inclusa?",
-  "O seguro e o IPVA já estão inclusos na mensalidade?",
-  "Como funciona a retirada do veículo?",
-  "Posso devolver o carro antes do fim do contrato?",
-  "O que acontece se eu ultrapassar a quilometragem contratada?",
-  "Quanto tempo leva para eu receber o carro?",
+  {
+    question: "O que está incluso na assinatura do carro?",
+    answer:
+      "A mensalidade reúne os principais custos do veículo, como IPVA, licenciamento, documentação, seguro, manutenção preventiva e assistência 24h. Alguns planos também podem prever carro reserva em caso de sinistro, conforme as condições contratadas.",
+  },
+  {
+    question: "Como funciona a assinatura de veículos?",
+    answer:
+      "Você escolhe o modelo, define prazo e franquia de quilometragem, passa pela análise de crédito e paga uma mensalidade fixa para usar o carro. Ao final do contrato, pode renovar, devolver ou avaliar a compra do veículo, conforme disponibilidade e contrato.",
+  },
+  {
+    question: "Quais documentos preciso para contratar?",
+    answer:
+      "A contratação passa por análise de crédito e a documentação pode variar conforme pessoa física, empresa, oferta e perfil. Depois da simulação, a equipe da LM informa os dados e documentos necessários para seguir com a proposta.",
+  },
+  {
+    question: "Posso escolher o prazo e a quilometragem do plano?",
+    answer:
+      "Sim. Os planos variam por modelo e oferta, com opções de prazo e franquia mensal de quilometragem. A recomendação é escolher a franquia conforme sua rotina para evitar cobrança por quilômetros excedentes.",
+  },
+  {
+    question: "A manutenção do veículo está inclusa?",
+    answer:
+      "A manutenção preventiva está inclusa, seguindo as condições do plano e as recomendações do fabricante. Itens decorrentes de mau uso, desgaste severo, avarias ou serviços fora da cobertura podem ser cobrados à parte.",
+  },
+  {
+    question: "O seguro e o IPVA já estão inclusos na mensalidade?",
+    answer:
+      "Sim. A assinatura contempla custos como IPVA, documentação/licenciamento e seguro. Em caso de sinistro, pode haver franquia ou coparticipação prevista em contrato.",
+  },
+  {
+    question: "Como funciona a retirada do veículo?",
+    answer:
+      "Após aprovação, assinatura do contrato e disponibilidade do modelo, a LM orienta os próximos passos para entrega ou retirada. Os prazos variam conforme veículo, estoque e região.",
+  },
+  {
+    question: "Posso devolver o carro antes do fim do contrato?",
+    answer:
+      "Pode, mas a devolução antecipada pode gerar multa ou cobrança prevista em contrato. Antes de contratar, vale escolher um prazo alinhado ao seu momento de vida para evitar custos de cancelamento.",
+  },
+  {
+    question: "O que acontece se eu ultrapassar a quilometragem contratada?",
+    answer:
+      "A quilometragem é definida no contrato. Se houver excedente, a cobrança adicional por quilômetro pode ser apurada na devolução ou conforme as regras do plano contratado.",
+  },
+  {
+    question: "Quanto tempo leva para eu receber o carro?",
+    answer:
+      "O prazo depende do modelo, estoque, aprovação e região de entrega. Nas condições comerciais publicadas, há ofertas com prazos como 15 dias para SP/ABC e 30 a 45 dias para outras regiões, variando por campanha e veículo.",
+  },
 ];

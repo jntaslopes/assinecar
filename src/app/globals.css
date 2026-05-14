@@ -1061,47 +1061,69 @@ button:disabled {
 }
 
 .faq-section {
+  align-items: start;
+  border-radius: 16px;
   display: grid;
-  gap: 48px;
-  grid-template-columns: 330px minmax(0, 1fr);
-  padding: 64px;
+  gap: 16px;
+  grid-template-columns: 474px minmax(0, 1fr);
+  padding: 64px 46px;
 }
 
-.faq-heading span {
-  align-items: center;
-  background: var(--purple);
-  border-radius: 50%;
-  color: var(--white);
+.faq-heading {
+  align-items: flex-start;
   display: flex;
-  font-size: 28px;
-  font-weight: 700;
-  height: 44px;
-  justify-content: center;
-  width: 44px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-heading-copy {
+  display: grid;
+  gap: 10px;
+  max-width: 474px;
+}
+
+.faq-heading img {
+  height: 64px;
+  width: 64px;
 }
 
 .faq-heading h2 {
-  font-size: 32px;
-  line-height: 1.1;
-  margin: 12px 0 8px;
+  color: var(--ink);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.faq-heading h2 span {
+  display: block;
 }
 
 .faq-heading p {
-  color: var(--muted);
+  color: var(--ink);
   font-size: 14px;
-  line-height: 1.35;
-  margin: 0 0 24px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 474px;
 }
 
 .faq-list {
   display: grid;
-  gap: 8px;
+  gap: 16px;
+  min-width: 0;
 }
 
 .faq-item {
   border: 1px solid #d9d9d9;
   border-radius: 8px;
+  height: 51px;
   overflow: hidden;
+}
+
+.faq-item.is-open {
+  height: auto;
 }
 
 .faq-item button {
@@ -1113,15 +1135,25 @@ button:disabled {
   display: flex;
   font-size: 16px;
   font-weight: 700;
+  gap: 24px;
+  height: 49px;
   justify-content: space-between;
-  padding: 16px 24px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  padding: 15px 24px;
   text-align: left;
   width: 100%;
 }
 
-.faq-item button span {
-  color: var(--purple);
-  font-size: 18px;
+.faq-arrow {
+  flex: 0 0 auto;
+  height: 7px;
+  transition: transform 180ms ease;
+  width: 10px;
+}
+
+.faq-item button[aria-expanded="true"] .faq-arrow {
+  transform: rotate(180deg);
 }
 
 .faq-item p {
@@ -1548,6 +1580,15 @@ button:disabled {
   .footer-bottom {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-item,
+  .faq-item button {
+    height: auto;
   }
 
   .vehicles-section {
