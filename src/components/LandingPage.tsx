@@ -128,43 +128,44 @@ function Header() {
 function Hero() {
   return (
     <section className="hero-section">
-      <div className="hero-copy">
-        <h1>
-          Novo <span>Haval H6 GT</span>
-          <strong>0km por assinatura</strong>
-        </h1>
-        <p>Não é financiamento: seguro, manutenção e documentação inclusos.</p>
-        <div className="hero-price">
-          <span>R$</span>
-          <strong>5.689</strong>
-          <em>/mês</em>
+      <div className="hero-container">
+        <div className="hero-copy">
+          <h1>
+            Novo <span>Haval H6 GT</span>
+            <strong>0km por assinatura</strong>
+          </h1>
+          <p>Tudo incluso para você dirigir sem se preocupar: seguro, manutenção e documentação.</p>
+          <div className="hero-price">
+            <span>R$</span>
+            <strong>5.689</strong>
+            <em>/mês</em>
+          </div>
+          <small>No plano de 36 meses / 500km</small>
+          <div className="hero-ctas">
+            <a className="primary-button" href="#veiculos">
+              Simular meu plano
+            </a>
+            <a className="secondary-button" href="#como-funciona">
+              Entender como funciona
+            </a>
+          </div>
+          <p className="legal">*Oferta limitada conforme disponibilidade. Consulte condições comerciais</p>
         </div>
-        <small>No plano de 36 meses / 500km</small>
-        <div className="hero-ctas">
-          <a className="primary-button" href="#veiculos">
-            Simular meu plano
-          </a>
-          <a className="secondary-button" href="#como-funciona">
-            Entender como funciona
-          </a>
+        <div className="hero-visual" aria-hidden="true">
+          <Image className="hero-shape-figma hero-shape-dark" src={assets.heroShapeA} alt="" width={621} height={342} priority />
+          <Image className="hero-shape-figma hero-shape-primary" src={assets.heroShapeB} alt="" width={621} height={342} priority />
+          <Image className="hero-car-figma" src={assets.heroCarFigma} alt="" width={718} height={486} priority />
         </div>
-        <p className="legal">*Oferta limitada conforme disponibilidade. Consulte condições comerciais</p>
+        <aside className="included-card">
+          <strong>Tudo incluso para você dirigir</strong>
+          {includedBenefits.map((benefit) => (
+            <span key={benefit.label}>
+              <Image src={benefit.icon} alt="" width={24} height={24} />
+              {benefit.label}
+            </span>
+          ))}
+        </aside>
       </div>
-      <div className="hero-visual" aria-hidden="true">
-        <Image className="hero-shape shape-a" src={assets.heroShapeA} alt="" width={621} height={342} priority />
-        <Image className="hero-shape shape-b" src={assets.heroShapeB} alt="" width={621} height={342} priority />
-        <Image className="hero-car car-a" src={assets.heroCarA} alt="" width={708} height={472} priority />
-        <Image className="hero-plate" src={assets.plateHero} alt="" width={61} height={30} priority />
-      </div>
-      <aside className="included-card">
-        <strong>Tudo incluso para você dirigir</strong>
-        {includedBenefits.map((benefit) => (
-          <span key={benefit.label}>
-            <Image src={benefit.icon} alt="" width={24} height={24} />
-            {benefit.label}
-          </span>
-        ))}
-      </aside>
     </section>
   );
 }

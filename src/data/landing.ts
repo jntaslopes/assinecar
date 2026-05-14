@@ -4,6 +4,8 @@ export const assets = {
   logo: asset("logo-assine.svg"),
   angleDown: asset("angle-down.svg"),
   user: asset("user.svg"),
+  heroBgShapeFigma: asset("hero-bg-shape-figma.png"),
+  heroCarFigma: asset("hero-car-user-export.png"),
   heroShapeA: asset("hero-shape-a.svg"),
   heroShapeB: asset("hero-shape-b.svg"),
   heroCarA: asset("hero-car-fixed.png"),
