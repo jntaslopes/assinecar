@@ -1447,6 +1447,8 @@ button:disabled {
 .footer-bottom {
   background: var(--purple-dark);
   box-sizing: border-box;
+  box-shadow: 0 0 0 100vmax var(--purple-dark);
+  clip-path: inset(0 -100vmax);
   color: var(--white);
   display: flex;
   gap: 64px;
