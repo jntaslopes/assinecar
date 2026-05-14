@@ -84,7 +84,8 @@ function Hero() {
         <p className="legal">*Oferta limitada conforme disponibilidade. Consulte condições comerciais</p>
       </div>
       <div className="hero-visual" aria-hidden="true">
-        <Image className="hero-bg-shape-figma" src={assets.heroBgShapeFigma} alt="" width={651} height={342} priority />
+        <Image className="hero-shape-figma hero-shape-dark" src={assets.heroShapeA} alt="" width={621} height={342} priority />
+        <Image className="hero-shape-figma hero-shape-primary" src={assets.heroShapeB} alt="" width={621} height={342} priority />
         <Image className="hero-car-figma" src={assets.heroCarFigma} alt="" width={718} height={486} priority />
       </div>
       <aside className="included-card">

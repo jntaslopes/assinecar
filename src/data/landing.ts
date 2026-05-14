@@ -5,7 +5,7 @@ export const assets = {
   angleDown: asset("angle-down.svg"),
   user: asset("user.svg"),
   heroBgShapeFigma: asset("hero-bg-shape-figma.png"),
-  heroCarFigma: asset("hero-car-figma-v2.png"),
+  heroCarFigma: asset("hero-car-user-export.png"),
   heroShapeA: asset("hero-shape-a.svg"),
   heroShapeB: asset("hero-shape-b.svg"),
   heroCarA: asset("hero-car-fixed.png"),

@@ -312,15 +312,22 @@ button:disabled {
   z-index: 1;
 }
 
-.hero-bg-shape-figma {
+.hero-shape-figma {
   height: 342px;
-  left: 122px;
   max-width: none;
   object-fit: contain;
   position: absolute;
   top: 89px;
-  width: 651px;
+  width: 621px;
   z-index: 0;
+}
+
+.hero-shape-dark {
+  left: 122px;
+}
+
+.hero-shape-primary {
+  left: 152px;
 }
 
 .hero-car-figma {
@@ -1546,11 +1553,18 @@ button:disabled {
     width: 92.9%;
   }
 
-  .hero-bg-shape-figma {
+  .hero-shape-figma {
     height: auto;
-    left: 15.8%;
     top: 18%;
-    width: 84.2%;
+    width: 80.3%;
+  }
+
+  .hero-shape-dark {
+    left: 15.8%;
+  }
+
+  .hero-shape-primary {
+    left: 19.7%;
   }
 
   .included-card {
