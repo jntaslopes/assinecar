@@ -218,6 +218,15 @@ button:disabled {
   border-bottom: 1px solid var(--line);
   height: 538px;
   overflow: hidden;
+  width: 100%;
+}
+
+.hero-container {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 64px;
   position: relative;
   width: 100%;
 }
@@ -1511,6 +1520,10 @@ button:disabled {
   }
 
   .hero-section {
+    height: auto;
+  }
+
+  .hero-container {
     display: flex;
     flex-direction: column;
     height: auto;
