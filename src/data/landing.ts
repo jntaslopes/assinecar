@@ -108,7 +108,7 @@ export const cars = [
     title: "Haval H6 HEV2",
     description: "GWM Haval H6 1.5T HEV 2 DHT 26/26",
     price: "5.689",
-    media: [{ src: asset("vehicle-haval-composite.png"), className: "vehicle-image--haval-main", width: 305, height: 201 }],
+    media: [{ src: asset("vehicle-haval.png"), className: "vehicle-image--haval-main", width: 330, height: 224 }],
     plate: { src: asset("vehicle-plate-haval.svg"), className: "vehicle-plate--haval", width: 26, height: 12 },
     tags: [
       { label: "SUV", icon: assets.tagHatch },

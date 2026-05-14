@@ -602,11 +602,11 @@ button:disabled {
 }
 
 .vehicle-image--haval-main {
-  height: 233px;
-  left: 30px;
+  height: 224px;
+  left: 40px;
   object-fit: contain !important;
-  top: -32px;
-  width: 350px;
+  top: -22px;
+  width: 330px;
 }
 
 .vehicle-image--toro {
@@ -632,8 +632,8 @@ button:disabled {
 
 .vehicle-plate--haval {
   height: 12px;
-  left: 112px;
-  top: 111px;
+  left: 106px;
+  top: 112px;
   width: 26px;
 }
 
@@ -1726,7 +1726,7 @@ button:disabled {
   }
 
   .vehicle-image--haval-main {
-    left: calc(50% - 175px);
+    left: calc(50% - 165px);
   }
 
   .vehicle-image--toro {
@@ -1743,7 +1743,7 @@ button:disabled {
   }
 
   .vehicle-plate--haval {
-    left: calc(50% - 93px);
+    left: calc(50% - 99px);
   }
 
   .vehicle-plate--tracker {
