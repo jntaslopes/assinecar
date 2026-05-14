@@ -302,45 +302,59 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <div>
-          <h2>Atendimento</h2>
-          <a className="phone" href="tel:08000755050">
-            <Image src={assets.whatsapp} alt="" width={24} height={24} />
-            0800 075 5050
-          </a>
-          <p>Segunda a sexta-feira, das 7h às 18h.</p>
-          <p>Atendimento 24h para assistência, furto ou roubo.</p>
+        <div className="footer-contact">
+          <div className="footer-contact-main">
+            <div className="footer-contact-heading">
+              <h2>Atendimento</h2>
+              <a className="phone" href="tel:08000755050">
+                <Image src={assets.whatsapp} alt="" width={24} height={24} />
+                0800 075 5050
+              </a>
+            </div>
+            <div className="footer-contact-hours">
+              <p>Segunda a sexta-feira, das 7h às 18h.</p>
+              <p>Atendimento 24h para assistência, furto ou roubo.</p>
+            </div>
+          </div>
           <small>
-            Dentro dos nossos meios de atendimento, você precisará fornecer seus dados pessoais
-            para prosseguir no atendimento. Leia nossa Política de Privacidade.
+            Dentro dos nossos meios de atendimento, você precisará fornecer seus dados pessoais para
+            prosseguir no atendimento. Para entender como tratamos essas informações e como nos
+            preocupamos com a privacidade de nossos parceiros, leia nossa{" "}
+            <strong>Política de Privacidade</strong>.
           </small>
         </div>
-        <nav>
-          <strong>Produtos LM</strong>
-          <a>LM Frotas</a>
-          <a>LM Assinecar</a>
-          <a>LM Seminovos</a>
-          <a>LM Veículos para Apps</a>
-          <a>LM AssineTruck</a>
-        </nav>
-        <nav className="wide-links">
-          <strong>A LM Mobilidade</strong>
-          <a>Site Principal</a>
-          <a>Quem Somos</a>
-          <a>Nossa História</a>
-          <a>Onde estamos</a>
-          <a>Investidores</a>
-          <a>Integridade</a>
-          <a>Fornecedores</a>
-          <a>Portal do Cliente</a>
-          <a>Trabalhe Conosco</a>
-          <a>Central de satisfação do Cliente</a>
-        </nav>
+        <div className="footer-link-groups">
+          <nav className="footer-link-group" aria-label="Produtos LM">
+            <strong>Produtos LM</strong>
+            <a>LM Frotas</a>
+            <a>LM Assinecar</a>
+            <a>LM Seminovos</a>
+            <a>LM Veículos para Apps</a>
+            <a>LM AssineTruck</a>
+          </nav>
+          <nav className="footer-link-group wide-links" aria-label="A LM Mobilidade">
+            <strong>A LM Mobilidade</strong>
+            <div className="footer-link-columns">
+              <a>Site Principal</a>
+              <a>Quem Somos</a>
+              <a>Nossa História</a>
+              <a>Onde estamos</a>
+              <a>Investidores</a>
+              <a>Integridade</a>
+              <a>Fornecedores</a>
+              <a>Portal do Cliente</a>
+              <a>Trabalhe Conosco</a>
+              <a>Central de satisfação do Cliente</a>
+            </div>
+          </nav>
+        </div>
       </div>
       <div className="footer-bottom">
-        <div>
-          <Image src={assets.footerLogo} alt="LM" width={121} height={20} />
-          <p>2025 - Todos os Direitos Reservados</p>
+        <div className="footer-brand-column">
+          <div className="footer-brand-main">
+            <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
+            <p>2025 - Todos os Direitos Reservados</p>
+          </div>
           <div className="policy-row">
             <a>Política de privacidade</a>
             <a>Política de Cookies</a>
@@ -352,7 +366,7 @@ function Footer() {
             <Image src={assets.badgeC} alt="" width={34} height={58} />
           </div>
         </div>
-        <div>
+        <div className="footer-social-column">
           <strong>Siga as redes da LM:</strong>
           <div className="socials">
             <Image src={assets.youtube} alt="YouTube" width={24} height={24} />
@@ -361,7 +375,8 @@ function Footer() {
           </div>
           <p>
             Você está sendo redirecionado(a) para uma página externa, que contém seus próprios
-            termos e condições de uso e avisos de privacidade.
+            termos e condições de uso e avisos de privacidade. A LM não é responsável pelo conteúdo
+            ou pelas práticas de privacidade da página de destino.
           </p>
         </div>
       </div>
