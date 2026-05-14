@@ -83,10 +83,7 @@ function Hero() {
         <p className="legal">*Oferta limitada conforme disponibilidade. Consulte condições comerciais</p>
       </div>
       <div className="hero-visual" aria-hidden="true">
-        <Image className="hero-shape shape-a" src={assets.heroShapeA} alt="" width={621} height={342} priority />
-        <Image className="hero-shape shape-b" src={assets.heroShapeB} alt="" width={621} height={342} priority />
-        <Image className="hero-car car-a" src={assets.heroCarA} alt="" width={708} height={472} priority />
-        <Image className="hero-plate" src={assets.plateHero} alt="" width={61} height={30} priority />
+        <Image className="hero-car-figma" src={assets.heroCarFigma} alt="" width={718} height={486} priority />
       </div>
       <aside className="included-card">
         <strong>Tudo incluso para você dirigir</strong>

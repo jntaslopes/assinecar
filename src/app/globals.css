@@ -235,61 +235,23 @@ img {
 }
 
 .hero-visual {
-  height: 538px;
+  height: 486px;
   left: 492px;
   isolation: isolate;
   position: absolute;
-  top: 0;
-  width: 904px;
+  top: -1px;
+  width: 718px;
   z-index: 1;
 }
 
-.hero-shape,
-.hero-car,
-.hero-plate {
+.hero-car-figma {
+  height: 486px;
+  left: 0;
   max-width: none;
-  position: absolute;
-}
-
-.hero-shape {
-  z-index: 0 !important;
-}
-
-.hero-car {
-  z-index: 10 !important;
-}
-
-.hero-plate {
-  z-index: 11 !important;
-}
-
-.shape-a {
-  height: 342px;
-  left: 122px;
-  top: 88px;
-  width: 621px;
-}
-
-.shape-b {
-  height: 342px;
-  left: 152px;
-  top: 88px;
-  width: 621px;
-}
-
-.car-a {
-  height: 472px;
-  left: 5px;
   object-fit: contain;
-  top: 14px;
-  width: 708px;
-}
-
-.hero-plate {
-  height: 30px;
-  left: 141px;
-  top: 298px;
-  width: 61px;
+  position: absolute;
+  top: 0;
+  width: 718px;
 }
 
 .included-card {
@@ -915,6 +877,12 @@ img {
     right: 24px;
   }
 
+  .hero-visual {
+    left: 44vw;
+    transform: scale(0.78);
+    transform-origin: left top;
+  }
+
   .benefit-strip > div {
     width: calc(100vw - 48px);
   }
@@ -991,11 +959,16 @@ img {
   }
 
   .hero-visual {
-    height: 310px;
+    height: auto;
     margin-top: 20px;
-    transform: scale(0.68);
-    transform-origin: left top;
-    width: 904px;
+    transform: none;
+    width: 100%;
+  }
+
+  .hero-car-figma {
+    height: auto;
+    position: relative;
+    width: 100%;
   }
 
   .included-card {
