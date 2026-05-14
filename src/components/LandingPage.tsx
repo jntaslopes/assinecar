@@ -78,9 +78,6 @@ function Header() {
         </button>
         {isProductMenuOpen ? (
           <div className="product-menu" id="lm-product-menu" role="menu">
-            <div className="product-menu-brand" aria-hidden="true">
-              <Image src={assets.mobilityLogo} alt="" width={167} height={30} />
-            </div>
             <p>Navegue entre os nossos produtos</p>
             <div className="product-menu-links">
               {productMenu.map((product) => (
@@ -93,6 +90,9 @@ function Header() {
                   />
                 </a>
               ))}
+            </div>
+            <div className="product-menu-footer">
+              <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
             </div>
           </div>
         ) : null}

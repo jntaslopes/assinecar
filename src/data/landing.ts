@@ -2,7 +2,6 @@ const asset = (name: string) => `/assets/figma/assinecar/${name}`;
 
 export const assets = {
   logo: asset("logo-assine.svg"),
-  mobilityLogo: asset("logo-lm-mobilidade.svg"),
   angleDown: asset("angle-down.svg"),
   user: asset("user.svg"),
   heroShapeA: asset("hero-shape-a.svg"),
