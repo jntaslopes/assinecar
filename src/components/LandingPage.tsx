@@ -84,21 +84,27 @@ function Header() {
             <p>Navegue entre os nossos produtos</p>
             <div className="product-menu-links">
               {productMenu.map((product) => (
-                <a href={product.href} key={product.href} role="menuitem">
+                <button
+                  className="product-menu-item"
+                  key={product.href}
+                  type="button"
+                  role="menuitem"
+                  aria-label={product.label}
+                >
                   <Image
                     src={product.logo}
                     alt={product.alt}
                     width={product.width}
                     height={product.height}
                   />
-                </a>
+                </button>
               ))}
             </div>
             <div className="product-menu-footer">
               <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
-              <a href="https://lmmobilidade.com.br/" target="_blank" rel="noreferrer">
+              <span className="product-menu-footer-label">
                 Acessar site institucional
-              </a>
+              </span>
             </div>
           </div>
         ) : null}
