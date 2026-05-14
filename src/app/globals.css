@@ -793,11 +793,11 @@ button:disabled {
 }
 
 .vehicle-arrow--left {
-  left: 0;
+  left: 48px;
 }
 
 .vehicle-arrow--right {
-  right: 0;
+  right: 48px;
 }
 
 .catalog-button {
@@ -1768,6 +1768,14 @@ button:disabled {
     height: 48px;
     top: 206px;
     width: 48px;
+  }
+
+  .vehicle-arrow--left {
+    left: 16px;
+  }
+
+  .vehicle-arrow--right {
+    right: 16px;
   }
 
   .advantages-section {
