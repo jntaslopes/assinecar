@@ -79,8 +79,7 @@ function Header() {
         {isProductMenuOpen ? (
           <div className="product-menu" id="lm-product-menu" role="menu">
             <div className="product-menu-brand" aria-hidden="true">
-              <Image src={assets.mobilityLogoWhite} alt="" width={154} height={28} />
-              <span />
+              <Image src={assets.mobilityLogo} alt="" width={167} height={30} />
             </div>
             <p>Navegue entre os nossos produtos</p>
             <div className="product-menu-links">
