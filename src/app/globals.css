@@ -1154,10 +1154,13 @@ button:disabled {
 .faq-section {
   align-items: start;
   border-radius: 16px;
+  box-sizing: border-box;
   display: grid;
   gap: 16px;
   grid-template-columns: 474px minmax(0, 1fr);
-  padding: 64px 46px;
+  margin-inline: auto;
+  padding: 64px;
+  width: min(100%, 1440px);
 }
 
 .faq-heading {
@@ -1256,7 +1259,10 @@ button:disabled {
 }
 
 .consultant-section {
+  box-sizing: border-box;
+  margin-inline: auto;
   padding: 0 64px 64px;
+  width: min(100%, 1440px);
 }
 
 .consultant-card {
@@ -1320,10 +1326,13 @@ button:disabled {
 
 .footer-top {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   gap: 64px;
   justify-content: center;
+  margin-inline: auto;
   padding: 48px 64px;
+  width: min(100%, 1440px);
 }
 
 .footer-contact {
@@ -1437,11 +1446,14 @@ button:disabled {
 
 .footer-bottom {
   background: var(--purple-dark);
+  box-sizing: border-box;
   color: var(--white);
   display: flex;
   gap: 64px;
   align-items: flex-start;
-  padding: 32px 48px;
+  margin-inline: auto;
+  padding: 32px 64px;
+  width: min(100%, 1440px);
 }
 
 .footer-bottom p,
