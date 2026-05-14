@@ -10,6 +10,8 @@ import {
   includedBenefits,
   steps,
   stripBenefits,
+  trustCards,
+  trustStats,
 } from "@/data/landing";
 
 export function LandingPage() {
@@ -163,8 +165,8 @@ function HowItWorks() {
           Assine com praticidade <span>e sem complicação</span>
         </h2>
         <p>
-          Escolha seu carro, configure seu plano e conte com a LM para cuidar da parte
-          burocrática e operacional.
+          Escolha seu carro, configure seu plano e conte com a LM para cuidar da parte burocrática
+          e operacional.
         </p>
         <ol>
           {steps.map((step) => (
@@ -194,30 +196,72 @@ function HowItWorks() {
 function Advantages() {
   return (
     <section className="advantages-section">
-      <h2>
-        Vantagens de escolher um <span>carro por assinatura</span>
-      </h2>
-      <p>Tenha o carro que combina com sua rotina sem se preocupar com burocracia.</p>
-      <div className="advantages-grid">
-        <div className="phone-panel">
-          <Image src={assets.heroCarTrimmed} alt="" width={420} height={280} loading="eager" />
-          <Image src={assets.logo} alt="LM AssineCar" width={142} height={28} loading="eager" />
+      <div className="advantages-content">
+        <div className="advantages-heading">
+          <h2>
+            Vantagens de escolher um <span>carro por assinatura</span>
+          </h2>
+          <p>Tudo o que você precisa para dirigir com tranquilidade</p>
         </div>
-        {advantages.map((item) => (
-          <article key={item.title}>
-            <Image src={item.icon} alt="" width={28} height={28} />
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+        <div className="advantages-grid">
+          {advantages.map((item) => (
+            <article key={item.title}>
+              <Image src={item.icon} alt="" width={48} height={48} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="confidence-wrap">
+          <Image
+            className="confidence-phone"
+            src={assets.advantagesPhone}
+            alt=""
+            width={444}
+            height={592}
+            loading="eager"
+          />
+          <div className="confidence-panel">
+            <Image className="trust-ring ring-a" src={assets.trustRingA} alt="" width={627} height={545} />
+            <Image className="trust-ring ring-b" src={assets.trustRingB} alt="" width={627} height={545} />
+            <Image className="trust-ring ring-c" src={assets.trustRingC} alt="" width={627} height={545} />
+            <div className="confidence-content">
+              <div className="confidence-copy">
+                <h3>
+                  Confiança de quem entende de <span>mobilidade</span>
+                </h3>
+                <p>
+                  A LM Mobilidade reúne décadas de experiência, presença nacional e uma estrutura
+                  preparada para simplificar sua experiência com o carro.
+                </p>
+              </div>
+              <div className="trust-grid">
+                <div className="trust-cards">
+                  {trustCards.map((item) => (
+                    <article className="trust-card" key={item.title}>
+                      <Image src={item.icon} alt="" width={48} height={48} />
+                      <strong>{item.title}</strong>
+                    </article>
+                  ))}
+                </div>
+                <div className="trust-stats">
+                  {trustStats.map((item) => (
+                    <article className="trust-stat" key={item.title}>
+                      <span>
+                        <Image src={item.icon} alt="" width={48} height={48} />
+                      </span>
+                      <div>
+                        <strong>{item.title}</strong>
+                        <p>{item.text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
-          </article>
-        ))}
-      </div>
-      <div className="confidence-panel">
-        <Image src={assets.ctaPhotoB} alt="" width={658} height={370} loading="eager" />
-        <div>
-          <h3>Confiança de quem entende de mobilidade</h3>
-          <p>A LM Mobilidade oferece planos para pessoas e empresas com atendimento especializado.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -246,8 +290,8 @@ function FaqSection() {
             </button>
             {open === index ? (
               <p>
-                A equipe LM confirma as condições do plano, documentação e disponibilidade antes
-                da contratação.
+                A equipe LM confirma as condições do plano, documentação e disponibilidade antes da
+                contratação.
               </p>
             ) : null}
           </div>
@@ -281,8 +325,8 @@ function ConsultantCta() {
           <h2>Ficou alguma dúvida?</h2>
           <h3>A gente te ajuda a decidir com segurança</h3>
           <p>
-            Nossa equipe te ajuda a entender as opções disponíveis, comparar veículos e escolher
-            a assinatura que faz mais sentido para você.
+            Nossa equipe te ajuda a entender as opções disponíveis, comparar veículos e escolher a
+            assinatura que faz mais sentido para você.
           </p>
           <a className="primary-button" href="tel:08000755050">
             <Image src={assets.headphones} alt="" width={20} height={20} />
