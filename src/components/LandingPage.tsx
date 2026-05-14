@@ -97,7 +97,7 @@ function Header() {
             <div className="product-menu-footer">
               <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
               <a href="https://lmmobilidade.com.br/" target="_blank" rel="noreferrer">
-                Site oficial
+                Acessar site institucional
               </a>
             </div>
           </div>
