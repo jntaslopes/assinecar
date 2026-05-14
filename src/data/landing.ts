@@ -2,6 +2,8 @@ const asset = (name: string) => `/assets/figma/assinecar/${name}`;
 
 export const assets = {
   logo: asset("logo-assine.svg"),
+  mobilityLogo: asset("logo-lm-mobilidade.svg"),
+  mobilityLogoWhite: asset("logo-lm-mobilidade-white.png"),
   angleDown: asset("angle-down.svg"),
   user: asset("user.svg"),
   heroShapeA: asset("hero-shape-a.svg"),
@@ -24,6 +26,41 @@ export const assets = {
   ctaPhotoA: asset("cta-car-photo-a-fixed.png"),
   ctaPhotoB: asset("cta-car-photo-b-fixed.png"),
 };
+
+export const productMenu = [
+  {
+    label: "LM Frotas",
+    href: "https://lmmobilidade.com.br/lmfrotas/",
+    logo: asset("logo-lm-frotas.svg"),
+    width: 123,
+    height: 29,
+    alt: "LM Frotas",
+  },
+  {
+    label: "LM AssineCar",
+    href: "https://lmmobilidade.com.br/lmassinecar/",
+    logo: asset("logo-lm-assinecar.svg"),
+    width: 149,
+    height: 30,
+    alt: "LM AssineCar",
+  },
+  {
+    label: "LM Veículos para Apps",
+    href: "https://lmmobilidade.com.br/lmveiculosapps/",
+    logo: asset("logo-lm-apps.svg"),
+    width: 146,
+    height: 31,
+    alt: "LM Veículos para Apps",
+  },
+  {
+    label: "LM Seminovos",
+    href: "https://lmmobilidade.com.br/lmseminovos/",
+    logo: asset("logo-lm-seminovos.png"),
+    width: 150,
+    height: 28,
+    alt: "LM Seminovos",
+  },
+];
 
 export const stripBenefits = [
   ["icon-calendar-refresh.svg", "Carro por assinatura"],
