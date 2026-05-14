@@ -23,6 +23,14 @@ export const assets = {
   mobilityPhone: asset("mobility-phone.png"),
   ctaPhotoA: asset("cta-car-photo-a-fixed.png"),
   ctaPhotoB: asset("cta-car-photo-b-fixed.png"),
+  arrowLeftPurple: asset("arrow-left-purple.svg"),
+  arrowRightPurple: asset("arrow-right-purple.svg"),
+  arrowRightWhite: asset("arrow-right-white.svg"),
+  tagHatch: asset("tag-hatch.svg"),
+  tagFuel: asset("tag-fuel.svg"),
+  tagEngine: asset("tag-engine.svg"),
+  tagCalendar: asset("tag-calendar.svg"),
+  tagGear: asset("tag-gear.svg"),
 };
 
 export const stripBenefits = [
@@ -41,32 +49,53 @@ export const includedBenefits = [
 
 export const cars = [
   {
-    image: asset("car-card-argo.png"),
-    group: "Grupo A",
-    name: "Kwid ou similares",
-    tags: ["Hatch", "Manual"],
-    price: "2.200",
+    slug: "argo",
+    title: "Argo",
+    description: "Fiat Argo 1.0 Drive 26/26",
+    price: "1.879",
+    media: [{ src: asset("vehicle-argo.png"), className: "vehicle-image--argo", width: 240, height: 179 }],
+    plate: { src: asset("vehicle-plate-argo.svg"), className: "vehicle-plate--argo", width: 28, height: 13 },
+    tags: [
+      { label: "Hatch", icon: assets.tagHatch },
+      { label: "Flex", icon: assets.tagFuel },
+      { label: "1.0", icon: assets.tagEngine },
+    ],
   },
   {
-    image: asset("hero-car-trimmed.png"),
-    group: "Haval H6 PHEV",
-    name: "SUV híbrido 0km até 1.782 km",
-    tags: ["SUV", "Entrega rápida"],
+    slug: "haval",
+    title: "Haval H6 HEV2",
+    description: "GWM Haval H6 1.5T HEV 2 DHT 26/26",
     price: "5.689",
+    media: [{ src: asset("vehicle-haval-composite.png"), className: "vehicle-image--haval-main", width: 305, height: 201 }],
+    plate: { src: asset("vehicle-plate-haval.svg"), className: "vehicle-plate--haval", width: 26, height: 12 },
+    tags: [
+      { label: "SUV", icon: assets.tagHatch },
+      { label: "Entrega em 14 dias", icon: assets.tagCalendar },
+    ],
   },
   {
-    image: asset("car-card-toro.png"),
-    group: "Toro",
-    name: "Fiat Toro 2.0 Turbo ou similar",
-    tags: ["Picape", "Diesel"],
-    price: "4.699",
+    slug: "toro",
+    title: "Toro",
+    description: "Fiat Toro 2.2 TDI Ranch Auto 4WD 25/26",
+    price: "4.499",
+    media: [{ src: asset("vehicle-toro.png"), className: "vehicle-image--toro", width: 292, height: 164 }],
+    plate: { src: asset("vehicle-plate-toro.svg"), className: "vehicle-plate--toro", width: 26, height: 14 },
+    tags: [
+      { label: "Automático", icon: assets.tagGear },
+      { label: "Diesel", icon: assets.tagFuel },
+    ],
   },
   {
-    image: asset("car-card-tracker.png"),
-    group: "Tracker",
-    name: "Chevrolet Tracker LT Turbo",
-    tags: ["SUV", "Flex"],
-    price: "3.299",
+    slug: "tracker",
+    title: "Tracker",
+    description: "Chevrolet Tracker 1.0 Turbo LT Auto 25/26",
+    price: "2.829",
+    media: [{ src: asset("vehicle-tracker.png"), className: "vehicle-image--tracker", width: 274, height: 204 }],
+    plate: { src: asset("vehicle-plate-tracker.svg"), className: "vehicle-plate--tracker", width: 31, height: 15 },
+    tags: [
+      { label: "Automático", icon: assets.tagGear },
+      { label: "Flex", icon: assets.tagFuel },
+    ],
   },
 ];
 

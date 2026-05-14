@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import {
   advantages,
@@ -117,41 +118,105 @@ function BenefitStrip() {
 }
 
 function VehicleSection() {
+  const [slide, setSlide] = useState(0);
+  const shift = slide === 0 ? "-175px" : "-350px";
+  const tabletShift = slide === 0 ? "-114px" : "-228px";
+  const mobileShift = slide === 0 ? "-40px" : "-68px";
+
   return (
     <section className="vehicles-section" id="veiculos">
       <h2>
-        Escolha seu próximo <span>carro por assinatura</span>
+        <span>Escolha</span> seu próximo carro por assinatura
       </h2>
-      <div className="vehicle-row">
-        {cars.map((car) => (
-          <article className="vehicle-card" key={car.group}>
-            <div className="vehicle-media">
-              <Image src={car.image} alt={car.group} width={322} height={180} loading="eager" />
-            </div>
-            <div className="vehicle-content">
-              <div className="group-label">
-                <span />
-                <strong>{car.group}</strong>
-                <span />
-              </div>
-              <h3>{car.name}</h3>
-              <div className="tags">
-                {car.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-              <p>A partir de</p>
-              <div className="card-price">
-                <strong>R$ {car.price}</strong>
-                <span>/ mês</span>
-              </div>
-              <a href="#atendimento">Ver detalhes</a>
-            </div>
-          </article>
-        ))}
+      <div className="vehicle-gallery">
+        <div className="vehicle-window">
+          <div
+            className="vehicle-track"
+            style={
+              {
+                "--vehicle-shift": shift,
+                "--vehicle-tablet-shift": tabletShift,
+                "--vehicle-mobile-shift": mobileShift,
+              } as CSSProperties & {
+                "--vehicle-shift": string;
+                "--vehicle-tablet-shift": string;
+                "--vehicle-mobile-shift": string;
+              }
+            }
+          >
+            {cars.map((car) => (
+              <article className="vehicle-card" key={car.slug}>
+                <div className="vehicle-media">
+                  {car.media.map((layer) => (
+                    <Image
+                      className={layer.className}
+                      src={layer.src}
+                      alt=""
+                      width={layer.width}
+                      height={layer.height}
+                      loading="eager"
+                      key={layer.src}
+                    />
+                  ))}
+                  <Image
+                    className={car.plate.className}
+                    src={car.plate.src}
+                    alt=""
+                    width={car.plate.width}
+                    height={car.plate.height}
+                    loading="eager"
+                  />
+                </div>
+                <div className="vehicle-content">
+                  <div className="tags">
+                    <span aria-hidden="true" className="vehicle-divider" />
+                    {car.tags.map((tag) => (
+                      <span className="vehicle-tag" key={tag.label}>
+                        <Image src={tag.icon} alt="" width={16} height={16} />
+                        {tag.label}
+                      </span>
+                    ))}
+                    <span aria-hidden="true" className="vehicle-divider" />
+                  </div>
+                  <div className="vehicle-title">
+                    <h3>{car.title}</h3>
+                    <p>{car.description}</p>
+                  </div>
+                  <div className="vehicle-price">
+                    <p>A partir de</p>
+                    <div className="card-price">
+                      <strong>R$ {car.price}</strong>
+                      <span>/ mês</span>
+                    </div>
+                  </div>
+                  <a className="outline-button" href="#atendimento">
+                    Ver Detalhes
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button
+            className="vehicle-arrow vehicle-arrow--left"
+            type="button"
+            aria-label="Ver carros anteriores"
+            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+          >
+            <Image src={assets.arrowLeftPurple} alt="" width={24} height={24} />
+          </button>
+          <button
+            className="vehicle-arrow vehicle-arrow--right"
+            type="button"
+            aria-label="Ver próximos carros"
+            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+          >
+            <Image src={assets.arrowRightPurple} alt="" width={24} height={24} />
+          </button>
+        </div>
       </div>
       <a className="primary-button catalog-button" href="#atendimento">
-        Ver todos os veículos disponíveis
+        Ver todos os veiculos disponíveis
+        <Image src={assets.arrowRightWhite} alt="" width={24} height={24} />
       </a>
     </section>
   );
