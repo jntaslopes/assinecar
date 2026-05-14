@@ -506,72 +506,109 @@ img {
 
 .how-section {
   align-items: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   display: grid;
   gap: 64px;
-  grid-template-columns: minmax(0, 1fr) minmax(360px, 610px);
+  grid-template-columns: 606px 642px;
+  justify-content: center;
+  min-height: 738px;
   padding: 64px;
 }
 
 .how-copy {
-  justify-self: end;
-  max-width: 520px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-content: center;
+  min-height: 610px;
+  padding: 0 48px;
+  width: 606px;
+}
+
+.how-heading {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
 }
 
 .how-copy h2 {
   font-size: 32px;
+  line-height: 1;
+  margin: 0;
+}
+
+.how-heading p {
+  color: var(--muted);
+  font-size: 14px;
   line-height: 1.2;
   margin: 0;
 }
 
-.how-copy p {
+.how-steps {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.how-steps li {
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 72px minmax(0, 1fr);
+  min-height: 72px;
+}
+
+.how-step-icon {
+  align-items: center;
+  background: #f8f9ff;
+  border-radius: 999px;
+  display: inline-flex;
+  height: 72px;
+  justify-content: center;
+  width: 72px;
+}
+
+.how-step-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.how-step-copy strong {
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.how-step-copy span {
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.35;
-  margin: 12px 0 28px;
+  line-height: 1.2;
 }
 
-.how-copy ol {
-  counter-reset: steps;
-  display: grid;
-  gap: 18px;
-  list-style: none;
-  margin: 0 0 28px;
-  padding: 0;
-}
-
-.how-copy li {
-  border-left: 3px solid var(--purple);
-  padding-left: 18px;
-}
-
-.how-copy li strong,
-.how-copy li span {
-  display: block;
-}
-
-.how-copy li strong {
+.how-step-copy b {
   color: var(--purple);
-  font-size: 16px;
 }
 
-.how-copy li span {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.35;
-  margin-top: 4px;
+.how-button {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-.how-photo {
-  border: 12px solid var(--purple);
-  border-radius: 28px;
-  box-shadow: 20px 20px 0 #240d31;
-  overflow: hidden;
+.how-visual {
+  height: 599px;
+  position: relative;
+  width: 642px;
 }
 
-.how-photo img {
-  aspect-ratio: 600 / 460;
-  height: auto;
-  object-fit: cover;
+.how-visual img {
+  height: 100%;
   width: 100%;
 }
 
@@ -937,6 +974,11 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .how-copy,
+  .how-visual {
+    justify-self: center;
+  }
+
   .consultant-card {
     padding-left: 48px;
     padding-top: 300px;
@@ -1044,7 +1086,31 @@ img {
   }
 
   .how-copy {
+    min-height: auto;
+    padding: 0;
     justify-self: stretch;
+    width: 100%;
+  }
+
+  .how-steps li {
+    gap: 16px;
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .how-step-icon {
+    height: 56px;
+    width: 56px;
+  }
+
+  .how-step-icon img {
+    height: 32px;
+    width: 32px;
+  }
+
+  .how-visual {
+    aspect-ratio: 642 / 599;
+    height: auto;
+    width: min(100%, 642px);
   }
 
   .confidence-panel {
