@@ -98,18 +98,16 @@ function Header() {
         ) : null}
       </div>
       <nav className="main-nav" aria-label="Navegação principal">
-        <a href="#veiculos">Veículos Disponíveis</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#duvidas">Dúvidas Frequentes</a>
+        <span>Veículos Disponíveis</span>
+        <span>Como Funciona</span>
+        <span>Dúvidas Frequentes</span>
       </nav>
       <div className="header-actions">
-        <a className="primary-button" href="#veiculos">
-          Montar um plano
-        </a>
-        <a className="client-link" href="#atendimento">
+        <span className="primary-button">Montar um plano</span>
+        <span className="client-link">
           <Image src={assets.user} alt="" width={14} height={16} />
           Já sou cliente
-        </a>
+        </span>
       </div>
     </header>
   );
