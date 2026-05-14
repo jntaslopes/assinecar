@@ -10,6 +10,8 @@ export const assets = {
   heroCarTrimmed: asset("hero-car-trimmed.png"),
   heroCarB: asset("hero-car-b.png"),
   plateHero: asset("plate-hero.svg"),
+  faqHelp: asset("faq-help.svg"),
+  faqArrowDown: asset("faq-arrow-down.svg"),
   whatsapp: asset("whatsapp.svg"),
   headphones: asset("headphones.svg"),
   footerLogo: asset("footer-logo-white.svg"),
@@ -100,7 +102,7 @@ export const advantages = [
 
 export const faqs = [
   "O que está incluso na assinatura do carro?",
-  "Como funciona a assinatura do veículo?",
+  "Como funciona a assinatura de veículos?",
   "Quais documentos preciso para contratar?",
   "Posso escolher o prazo e a quilometragem do plano?",
   "A manutenção do veículo está inclusa?",

@@ -225,24 +225,39 @@ function Advantages() {
 }
 
 function FaqSection() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section className="faq-section" id="duvidas">
       <div className="faq-heading">
-        <span>?</span>
-        <h2>Dúvidas Frequentes</h2>
-        <p>Confira as principais respostas sobre assinatura de veículos.</p>
+        <div className="faq-heading-copy">
+          <Image src={assets.faqHelp} alt="" width={64} height={64} />
+          <h2>
+            Dúvidas
+            <span>Frequentes</span>
+          </h2>
+          <p>Confira as perguntas frequentes ao lado. Se ainda precisar de ajuda, entre em contato com a gente.</p>
+        </div>
         <a className="secondary-button" href="#atendimento">
           Ver todas as perguntas frequentes
         </a>
       </div>
       <div className="faq-list">
         {faqs.map((question, index) => (
-          <div className="faq-item" key={question}>
-            <button type="button" onClick={() => setOpen(open === index ? -1 : index)}>
+          <div className={open === index ? "faq-item is-open" : "faq-item"} key={question}>
+            <button
+              type="button"
+              aria-expanded={open === index}
+              onClick={() => setOpen(open === index ? -1 : index)}
+            >
               {question}
-              <span>{open === index ? "−" : "+"}</span>
+              <Image
+                className="faq-arrow"
+                src={assets.faqArrowDown}
+                alt=""
+                width={10}
+                height={7}
+              />
             </button>
             {open === index ? (
               <p>
