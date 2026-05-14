@@ -42,8 +42,6 @@ describe("LandingPage", () => {
 
     await user.click(screen.getByRole("button", { name: /como funciona a assinatura/i }));
 
-    expect(
-      screen.getByText(/a equipe lm confirma as condições do plano/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/você escolhe o modelo, define prazo/i)).toBeInTheDocument();
   });
 });
