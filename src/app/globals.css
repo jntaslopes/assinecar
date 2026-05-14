@@ -456,7 +456,8 @@ button:disabled {
   left: 1092px;
   padding: 24px;
   position: absolute;
-  top: 73px;
+  top: 260px;
+  transform: translateY(-50%);
   width: 207px;
   z-index: 5;
 }
@@ -1511,6 +1512,7 @@ button:disabled {
   .included-card {
     left: auto;
     right: 24px;
+    top: 202px;
   }
 
   .hero-visual {
@@ -1645,6 +1647,7 @@ button:disabled {
     position: relative;
     right: auto;
     top: auto;
+    transform: none;
     width: 100%;
   }
 
