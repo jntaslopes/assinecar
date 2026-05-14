@@ -20,6 +20,10 @@ describe("LandingPage", () => {
     expect(menu).toBeInTheDocument();
     expect(screen.getByText(/navegue entre os nossos produtos/i)).toBeInTheDocument();
     expect(within(menu).getByRole("img", { name: "LM Mobilidade" })).toBeInTheDocument();
+    expect(within(menu).getByRole("link", { name: "Site oficial" })).toHaveAttribute(
+      "href",
+      "https://lmmobilidade.com.br/",
+    );
 
     for (const product of ["LM Frotas", "LM AssineCar", "LM Veículos para Apps", "LM Seminovos"]) {
       expect(within(menu).getByRole("img", { name: product })).toBeInTheDocument();

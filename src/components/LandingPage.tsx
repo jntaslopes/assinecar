@@ -93,6 +93,9 @@ function Header() {
             </div>
             <div className="product-menu-footer">
               <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
+              <a href="https://lmmobilidade.com.br/" target="_blank" rel="noreferrer">
+                Site oficial
+              </a>
             </div>
           </div>
         ) : null}
