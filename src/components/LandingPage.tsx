@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   advantages,
   assets,
   cars,
   faqs,
   includedBenefits,
+  productMenu,
   steps,
   stripBenefits,
   trustCards,
@@ -34,13 +35,79 @@ export function LandingPage() {
 }
 
 function Header() {
+  const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
+  const productMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isProductMenuOpen) {
+      return;
+    }
+
+    function handlePointerDown(event: PointerEvent) {
+      if (!productMenuRef.current?.contains(event.target as Node)) {
+        setIsProductMenuOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsProductMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isProductMenuOpen]);
+
   return (
     <header className="site-header">
-      <div className="brand-block">
+      <div className="brand-block" ref={productMenuRef}>
         <Image src={assets.logo} alt="LM AssineCar" width={110} height={22} priority />
-        <button className="brand-drop" type="button" aria-label="Abrir opções da marca">
+        <button
+          className="brand-drop"
+          type="button"
+          aria-controls="lm-product-menu"
+          aria-expanded={isProductMenuOpen}
+          aria-haspopup="menu"
+          aria-label="Abrir opções da marca"
+          onClick={() => setIsProductMenuOpen((isOpen) => !isOpen)}
+        >
           <Image src={assets.angleDown} alt="" width={11} height={14} />
         </button>
+        {isProductMenuOpen ? (
+          <div className="product-menu" id="lm-product-menu" role="menu">
+            <p>Navegue entre os nossos produtos</p>
+            <div className="product-menu-links">
+              {productMenu.map((product) => (
+                <button
+                  className="product-menu-item"
+                  key={product.href}
+                  type="button"
+                  role="menuitem"
+                  aria-label={product.label}
+                >
+                  <Image
+                    src={product.logo}
+                    alt={product.alt}
+                    width={product.width}
+                    height={product.height}
+                  />
+                </button>
+              ))}
+            </div>
+            <div className="product-menu-footer">
+              <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
+              <span className="product-menu-footer-label">
+                Acessar site institucional
+              </span>
+            </div>
+          </div>
+        ) : null}
       </div>
       <nav className="main-nav" aria-label="Navegação principal">
         <span>Veículos Disponíveis</span>
