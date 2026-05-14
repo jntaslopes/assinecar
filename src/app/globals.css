@@ -116,39 +116,6 @@ img {
   width: 31px;
 }
 
-.main-nav {
-  align-items: center;
-  border-left: 1px solid var(--line);
-  display: flex;
-  flex: 1;
-  gap: 16px;
-  height: 22px;
-  margin-left: 8px;
-  padding-left: 24px;
-}
-
-.main-nav a {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.header-actions {
-  align-items: center;
-  display: flex;
-  gap: 24px;
-}
-
-.client-link {
-  align-items: center;
-  color: #525252;
-  display: inline-flex;
-  font-size: 14px;
-  gap: 10px;
-  height: 33px;
-}
-
 .hero-section {
   border-bottom: 1px solid var(--line);
   height: 538px;
@@ -909,10 +876,6 @@ img {
     padding-right: 24px;
   }
 
-  .main-nav {
-    display: none;
-  }
-
   .included-card {
     left: auto;
     right: 24px;
@@ -961,11 +924,6 @@ img {
 
   .brand-block {
     min-width: 0;
-  }
-
-  .header-actions .primary-button,
-  .client-link {
-    display: none;
   }
 
   .hero-section {

@@ -39,20 +39,6 @@ function Header() {
           <Image src={assets.angleDown} alt="" width={11} height={14} />
         </button>
       </div>
-      <nav className="main-nav" aria-label="Navegação principal">
-        <a href="#veiculos">Veículos Disponíveis</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#duvidas">Dúvidas Frequentes</a>
-      </nav>
-      <div className="header-actions">
-        <a className="primary-button" href="#veiculos">
-          Montar um plano
-        </a>
-        <a className="client-link" href="#atendimento">
-          <Image src={assets.user} alt="" width={14} height={16} />
-          Já sou cliente
-        </a>
-      </div>
     </header>
   );
 }
