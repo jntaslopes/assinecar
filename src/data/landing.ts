@@ -21,6 +21,10 @@ export const assets = {
   badgeC: asset("badge-c.png"),
   privacyPhoto: asset("privacy-photo.png"),
   mobilityPhone: asset("mobility-phone.png"),
+  advantagesPhone: asset("advantages-phone.png"),
+  trustRingA: asset("trust-ring-a.svg"),
+  trustRingB: asset("trust-ring-b.svg"),
+  trustRingC: asset("trust-ring-c.svg"),
   ctaPhotoA: asset("cta-car-photo-a-fixed.png"),
   ctaPhotoB: asset("cta-car-photo-b-fixed.png"),
   howVisual: asset("how-visual.png"),
@@ -128,12 +132,42 @@ export const steps = [
 ];
 
 export const advantages = [
-  ["icon-shield.svg", "Proteção inclusa", "Dirija com cobertura e suporte contratado no plano."],
-  ["icon-task.svg", "IPVA e taxas inclusos", "Documentação e impostos já entram na mensalidade."],
-  ["icon-calendar-refresh.svg", "Planos flexíveis", "Escolha prazo e quilometragem conforme sua rotina."],
-  ["icon-wrench.svg", "Sem burocracia", "A LM cuida dos pontos operacionais do veículo."],
-  ["icon-tow.svg", "Assistência 24h", "Atendimento para emergências durante toda a assinatura."],
-  ["icon-zero.svg", "Carro novo", "Modelos atuais, revisados e prontos para uso."],
+  [
+    "advantage-shield-check.svg",
+    "Proteção inclusa",
+    "Proteção total para você e seu carro. Cobertura para roubo, furto, colisões e danos a terceiros.",
+  ],
+  [
+    "advantage-task-check.svg",
+    "IPVA e taxas inclusas",
+    "IPVA, licenciamento e outras taxas previstas na assinatura.",
+  ],
+  [
+    "advantage-wrench.svg",
+    "Manutenção e revisões",
+    "Revisões e manutenções preventivas já estão inclusas no plano",
+  ],
+  [
+    "advantage-thumb.svg",
+    "Sem burocracia",
+    "Documentação simples e aprovação rápida, sem complicação.",
+  ],
+  ["advantage-24h.svg", "Assistência 24h", "Reboque pane seca, chaveiro e suporte quando precisar."],
+  [
+    "advantage-car-reserve.svg",
+    "Carro reserva",
+    "Em casos de necessidade, mandamos um carro reserva para você.",
+  ],
+].map(([icon, title, text]) => ({ icon: asset(icon), title, text }));
+
+export const trustCards = [
+  ["trust-car-search.svg", "Modelos multimarcas 0km"],
+  ["trust-car-pin.svg", "Pontos de retirada em todo o Brasil"],
+].map(([icon, title]) => ({ icon: asset(icon), title }));
+
+export const trustStats = [
+  ["trust-calendar.svg", "+50 anos", "de história da LM Mobilidade."],
+  ["trust-sync-location.svg", "Presença nacional", "Atendimento e suporte em diferentes regiões do Brasil."],
 ].map(([icon, title, text]) => ({ icon: asset(icon), title, text }));
 
 export const faqs = [
