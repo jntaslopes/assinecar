@@ -555,7 +555,7 @@ button:disabled {
   height: 473px;
   overflow: hidden;
   position: relative;
-  width: min(1688px, calc(100vw - 112px));
+  width: 100vw;
 }
 
 .vehicle-track {
