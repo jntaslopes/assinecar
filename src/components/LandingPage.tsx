@@ -82,9 +82,7 @@ function Hero() {
       </div>
       <div className="hero-visual" aria-hidden="true">
         <Image className="hero-bg-shape-figma" src={assets.heroBgShapeFigma} alt="" width={651} height={342} priority />
-        <Image className="hero-car-figma" src={assets.heroCarA} alt="" width={708} height={472} priority />
-        <Image className="hero-car-overlay-figma" src={assets.heroCarB} alt="" width={718} height={472} priority />
-        <Image className="hero-plate-figma" src={assets.plateHero} alt="" width={61} height={30} priority />
+        <Image className="hero-car-figma" src={assets.heroCarFigma} alt="" width={718} height={486} priority />
       </div>
       <aside className="included-card">
         <strong>Tudo incluso para você dirigir</strong>

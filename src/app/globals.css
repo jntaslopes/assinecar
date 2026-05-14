@@ -259,35 +259,14 @@ img {
 }
 
 .hero-car-figma {
-  height: 472px;
-  left: 5px;
-  max-width: none;
-  object-fit: contain;
-  position: absolute;
-  top: 15px;
-  width: 708px;
-  z-index: 1;
-}
-
-.hero-plate-figma {
-  height: 30px;
-  left: 142px;
-  max-width: none;
-  position: absolute;
-  top: 299px;
-  width: 61px;
-  z-index: 3;
-}
-
-.hero-car-overlay-figma {
-  height: 472px;
+  height: 486px;
   left: 0;
   max-width: none;
   object-fit: contain;
   position: absolute;
   top: 0;
   width: 718px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .included-card {
@@ -1048,26 +1027,12 @@ img {
     width: 100%;
   }
 
-  .hero-car-figma,
-  .hero-car-overlay-figma,
-  .hero-plate-figma {
+  .hero-car-figma {
     height: auto;
     position: absolute;
   }
 
   .hero-car-figma {
-    left: 0.7%;
-    top: 3.1%;
-    width: 91.6%;
-  }
-
-  .hero-plate-figma {
-    left: 18.4%;
-    top: 61.4%;
-    width: 7.9%;
-  }
-
-  .hero-car-overlay-figma {
     left: 0;
     top: 0;
     width: 92.9%;
