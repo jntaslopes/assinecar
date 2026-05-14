@@ -217,33 +217,37 @@ function HowItWorks() {
   return (
     <section className="how-section" id="como-funciona">
       <div className="how-copy">
-        <h2>
-          Assine com praticidade <span>e sem complicação</span>
-        </h2>
-        <p>
-          Escolha seu carro, configure seu plano e conte com a LM para cuidar da parte
-          burocrática e operacional.
-        </p>
-        <ol>
+        <div className="how-heading">
+          <h2>
+            <span>Assine com praticidade</span> e sem complicação
+          </h2>
+          <p>
+            Escolha o carro ideal e tenha tudo em uma mensalidade fixa.
+            <br />
+            Sem se preocupar com IPVA, seguro, manutenção ou revenda.
+          </p>
+        </div>
+        <ol className="how-steps">
           {steps.map((step) => (
             <li key={step.title}>
-              <strong>{step.title}</strong>
-              <span>{step.text}</span>
+              <span className="how-step-icon">
+                <Image src={step.icon} alt="" width={40} height={40} />
+              </span>
+              <span className="how-step-copy">
+                <strong>{step.title}</strong>
+                <span>
+                  <b>{step.highlight}</b> {step.text}
+                </span>
+              </span>
             </li>
           ))}
         </ol>
-        <a className="primary-button" href="#veiculos">
-          Simular meu plano
+        <a className="primary-button how-button" href="#veiculos">
+          Escolher meu veículo
         </a>
       </div>
-      <div className="how-photo">
-        <Image
-          src={assets.ctaPhotoA}
-          alt="Casal dentro de um carro"
-          width={600}
-          height={460}
-          loading="eager"
-        />
+      <div className="how-visual" aria-hidden="true">
+        <Image src={assets.howVisual} alt="" width={642} height={599} loading="eager" />
       </div>
     </section>
   );

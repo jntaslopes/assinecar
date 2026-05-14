@@ -23,6 +23,7 @@ export const assets = {
   mobilityPhone: asset("mobility-phone.png"),
   ctaPhotoA: asset("cta-car-photo-a-fixed.png"),
   ctaPhotoB: asset("cta-car-photo-b-fixed.png"),
+  howVisual: asset("how-visual.png"),
 };
 
 export const productMenu = [
@@ -107,20 +108,28 @@ export const cars = [
 
 export const steps = [
   {
+    icon: asset("how-icon-car-check.svg"),
     title: "1. Escolha o carro ideal",
-    text: "Compare veículos por perfil de uso, prazo e franquia de quilometragem.",
+    highlight: "Encontre o modelo",
+    text: "que combina com sua rotina e estilo de vida.",
   },
   {
+    icon: asset("how-icon-filter.svg"),
     title: "2. Defina um plano",
-    text: "Selecione tempo de contrato e pacote de quilômetros com tudo incluso.",
+    highlight: "Defina prazo e quilometragem",
+    text: "de acordo com a sua necessidade.",
   },
   {
+    icon: asset("how-icon-chat.svg"),
     title: "3. Conte com um processo simples",
-    text: "A análise é rápida e a equipe acompanha você até a retirada do veículo.",
+    highlight: "Entraremos em contato com você",
+    text: "para resolver tudo no conforto da sua casa.",
   },
   {
+    icon: asset("how-icon-pin.svg"),
     title: "4. Retire e dirija",
-    text: "Use o carro com manutenção, documentação, proteção e suporte LM.",
+    highlight: "Retire seu veículo",
+    text: "e aproveite a experiência com mais comodidade.",
   },
 ];
 
