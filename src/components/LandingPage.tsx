@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import {
   advantages,
@@ -10,6 +11,8 @@ import {
   includedBenefits,
   steps,
   stripBenefits,
+  trustCards,
+  trustStats,
 } from "@/data/landing";
 
 export function LandingPage() {
@@ -115,41 +118,105 @@ function BenefitStrip() {
 }
 
 function VehicleSection() {
+  const [slide, setSlide] = useState(0);
+  const shift = slide === 0 ? "-175px" : "-350px";
+  const tabletShift = slide === 0 ? "-114px" : "-228px";
+  const mobileShift = slide === 0 ? "-40px" : "-68px";
+
   return (
     <section className="vehicles-section" id="veiculos">
       <h2>
-        Escolha seu próximo <span>carro por assinatura</span>
+        <span>Escolha</span> seu próximo carro por assinatura
       </h2>
-      <div className="vehicle-row">
-        {cars.map((car) => (
-          <article className="vehicle-card" key={car.group}>
-            <div className="vehicle-media">
-              <Image src={car.image} alt={car.group} width={322} height={180} loading="eager" />
-            </div>
-            <div className="vehicle-content">
-              <div className="group-label">
-                <span />
-                <strong>{car.group}</strong>
-                <span />
-              </div>
-              <h3>{car.name}</h3>
-              <div className="tags">
-                {car.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-              <p>A partir de</p>
-              <div className="card-price">
-                <strong>R$ {car.price}</strong>
-                <span>/ mês</span>
-              </div>
-              <a href="#atendimento">Ver detalhes</a>
-            </div>
-          </article>
-        ))}
+      <div className="vehicle-gallery">
+        <div className="vehicle-window">
+          <div
+            className="vehicle-track"
+            style={
+              {
+                "--vehicle-shift": shift,
+                "--vehicle-tablet-shift": tabletShift,
+                "--vehicle-mobile-shift": mobileShift,
+              } as CSSProperties & {
+                "--vehicle-shift": string;
+                "--vehicle-tablet-shift": string;
+                "--vehicle-mobile-shift": string;
+              }
+            }
+          >
+            {cars.map((car) => (
+              <article className="vehicle-card" key={car.slug}>
+                <div className="vehicle-media">
+                  {car.media.map((layer) => (
+                    <Image
+                      className={layer.className}
+                      src={layer.src}
+                      alt=""
+                      width={layer.width}
+                      height={layer.height}
+                      loading="eager"
+                      key={layer.src}
+                    />
+                  ))}
+                  <Image
+                    className={car.plate.className}
+                    src={car.plate.src}
+                    alt=""
+                    width={car.plate.width}
+                    height={car.plate.height}
+                    loading="eager"
+                  />
+                </div>
+                <div className="vehicle-content">
+                  <div className="tags">
+                    <span aria-hidden="true" className="vehicle-divider" />
+                    {car.tags.map((tag) => (
+                      <span className="vehicle-tag" key={tag.label}>
+                        <Image src={tag.icon} alt="" width={16} height={16} />
+                        {tag.label}
+                      </span>
+                    ))}
+                    <span aria-hidden="true" className="vehicle-divider" />
+                  </div>
+                  <div className="vehicle-title">
+                    <h3>{car.title}</h3>
+                    <p>{car.description}</p>
+                  </div>
+                  <div className="vehicle-price">
+                    <p>A partir de</p>
+                    <div className="card-price">
+                      <strong>R$ {car.price}</strong>
+                      <span>/ mês</span>
+                    </div>
+                  </div>
+                  <a className="outline-button" href="#atendimento">
+                    Ver Detalhes
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button
+            className="vehicle-arrow vehicle-arrow--left"
+            type="button"
+            aria-label="Ver carros anteriores"
+            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+          >
+            <Image src={assets.arrowLeftPurple} alt="" width={24} height={24} />
+          </button>
+          <button
+            className="vehicle-arrow vehicle-arrow--right"
+            type="button"
+            aria-label="Ver próximos carros"
+            onClick={() => setSlide((current) => (current === 0 ? 1 : 0))}
+          >
+            <Image src={assets.arrowRightPurple} alt="" width={24} height={24} />
+          </button>
+        </div>
       </div>
       <a className="primary-button catalog-button" href="#atendimento">
-        Ver todos os veículos disponíveis
+        Ver todos os veiculos disponíveis
+        <Image src={assets.arrowRightWhite} alt="" width={24} height={24} />
       </a>
     </section>
   );
@@ -198,30 +265,72 @@ function HowItWorks() {
 function Advantages() {
   return (
     <section className="advantages-section">
-      <h2>
-        Vantagens de escolher um <span>carro por assinatura</span>
-      </h2>
-      <p>Tenha o carro que combina com sua rotina sem se preocupar com burocracia.</p>
-      <div className="advantages-grid">
-        <div className="phone-panel">
-          <Image src={assets.heroCarTrimmed} alt="" width={420} height={280} loading="eager" />
-          <Image src={assets.logo} alt="LM AssineCar" width={142} height={28} loading="eager" />
+      <div className="advantages-content">
+        <div className="advantages-heading">
+          <h2>
+            Vantagens de escolher um <span>carro por assinatura</span>
+          </h2>
+          <p>Tudo o que você precisa para dirigir com tranquilidade</p>
         </div>
-        {advantages.map((item) => (
-          <article key={item.title}>
-            <Image src={item.icon} alt="" width={28} height={28} />
-            <div>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+        <div className="advantages-grid">
+          {advantages.map((item) => (
+            <article key={item.title}>
+              <Image src={item.icon} alt="" width={48} height={48} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="confidence-wrap">
+          <Image
+            className="confidence-phone"
+            src={assets.advantagesPhone}
+            alt=""
+            width={444}
+            height={592}
+            loading="eager"
+          />
+          <div className="confidence-panel">
+            <Image className="trust-ring ring-a" src={assets.trustRingA} alt="" width={627} height={545} />
+            <Image className="trust-ring ring-b" src={assets.trustRingB} alt="" width={627} height={545} />
+            <Image className="trust-ring ring-c" src={assets.trustRingC} alt="" width={627} height={545} />
+            <div className="confidence-content">
+              <div className="confidence-copy">
+                <h3>
+                  Confiança de quem entende de <span>mobilidade</span>
+                </h3>
+                <p>
+                  A LM Mobilidade reúne décadas de experiência, presença nacional e uma estrutura
+                  preparada para simplificar sua experiência com o carro.
+                </p>
+              </div>
+              <div className="trust-grid">
+                <div className="trust-cards">
+                  {trustCards.map((item) => (
+                    <article className="trust-card" key={item.title}>
+                      <Image src={item.icon} alt="" width={48} height={48} />
+                      <strong>{item.title}</strong>
+                    </article>
+                  ))}
+                </div>
+                <div className="trust-stats">
+                  {trustStats.map((item) => (
+                    <article className="trust-stat" key={item.title}>
+                      <span>
+                        <Image src={item.icon} alt="" width={48} height={48} />
+                      </span>
+                      <div>
+                        <strong>{item.title}</strong>
+                        <p>{item.text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
-          </article>
-        ))}
-      </div>
-      <div className="confidence-panel">
-        <Image src={assets.ctaPhotoB} alt="" width={658} height={370} loading="eager" />
-        <div>
-          <h3>Confiança de quem entende de mobilidade</h3>
-          <p>A LM Mobilidade oferece planos para pessoas e empresas com atendimento especializado.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -229,30 +338,42 @@ function Advantages() {
 }
 
 function FaqSection() {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(-1);
 
   return (
     <section className="faq-section" id="duvidas">
       <div className="faq-heading">
-        <span>?</span>
-        <h2>Dúvidas Frequentes</h2>
-        <p>Confira as principais respostas sobre assinatura de veículos.</p>
+        <div className="faq-heading-copy">
+          <Image src={assets.faqHelp} alt="" width={64} height={64} />
+          <h2>
+            Dúvidas
+            <span>Frequentes</span>
+          </h2>
+          <p>Confira as perguntas frequentes ao lado. Se ainda precisar de ajuda, entre em contato com a gente.</p>
+        </div>
         <a className="secondary-button" href="#atendimento">
           Ver todas as perguntas frequentes
         </a>
       </div>
       <div className="faq-list">
-        {faqs.map((question, index) => (
-          <div className="faq-item" key={question}>
-            <button type="button" onClick={() => setOpen(open === index ? -1 : index)}>
-              {question}
-              <span>{open === index ? "−" : "+"}</span>
+        {faqs.map((faq, index) => (
+          <div className={open === index ? "faq-item is-open" : "faq-item"} key={faq.question}>
+            <button
+              type="button"
+              aria-expanded={open === index}
+              onClick={() => setOpen(open === index ? -1 : index)}
+            >
+              {faq.question}
+              <Image
+                className="faq-arrow"
+                src={assets.faqArrowDown}
+                alt=""
+                width={10}
+                height={7}
+              />
             </button>
             {open === index ? (
-              <p>
-                A equipe LM confirma as condições do plano, documentação e disponibilidade antes
-                da contratação.
-              </p>
+              <p>{faq.answer}</p>
             ) : null}
           </div>
         ))}
@@ -285,8 +406,8 @@ function ConsultantCta() {
           <h2>Ficou alguma dúvida?</h2>
           <h3>A gente te ajuda a decidir com segurança</h3>
           <p>
-            Nossa equipe te ajuda a entender as opções disponíveis, comparar veículos e escolher
-            a assinatura que faz mais sentido para você.
+            Nossa equipe te ajuda a entender as opções disponíveis, comparar veículos e escolher a
+            assinatura que faz mais sentido para você.
           </p>
           <a className="primary-button" href="tel:08000755050">
             <Image src={assets.headphones} alt="" width={20} height={20} />
@@ -302,45 +423,59 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-top">
-        <div>
-          <h2>Atendimento</h2>
-          <a className="phone" href="tel:08000755050">
-            <Image src={assets.whatsapp} alt="" width={24} height={24} />
-            0800 075 5050
-          </a>
-          <p>Segunda a sexta-feira, das 7h às 18h.</p>
-          <p>Atendimento 24h para assistência, furto ou roubo.</p>
+        <div className="footer-contact">
+          <div className="footer-contact-main">
+            <div className="footer-contact-heading">
+              <h2>Atendimento</h2>
+              <a className="phone" href="tel:08000755050">
+                <Image src={assets.whatsapp} alt="" width={24} height={24} />
+                0800 075 5050
+              </a>
+            </div>
+            <div className="footer-contact-hours">
+              <p>Segunda a sexta-feira, das 7h às 18h.</p>
+              <p>Atendimento 24h para assistência, furto ou roubo.</p>
+            </div>
+          </div>
           <small>
-            Dentro dos nossos meios de atendimento, você precisará fornecer seus dados pessoais
-            para prosseguir no atendimento. Leia nossa Política de Privacidade.
+            Dentro dos nossos meios de atendimento, você precisará fornecer seus dados pessoais para
+            prosseguir no atendimento. Para entender como tratamos essas informações e como nos
+            preocupamos com a privacidade de nossos parceiros, leia nossa{" "}
+            <strong>Política de Privacidade</strong>.
           </small>
         </div>
-        <nav>
-          <strong>Produtos LM</strong>
-          <a>LM Frotas</a>
-          <a>LM Assinecar</a>
-          <a>LM Seminovos</a>
-          <a>LM Veículos para Apps</a>
-          <a>LM AssineTruck</a>
-        </nav>
-        <nav className="wide-links">
-          <strong>A LM Mobilidade</strong>
-          <a>Site Principal</a>
-          <a>Quem Somos</a>
-          <a>Nossa História</a>
-          <a>Onde estamos</a>
-          <a>Investidores</a>
-          <a>Integridade</a>
-          <a>Fornecedores</a>
-          <a>Portal do Cliente</a>
-          <a>Trabalhe Conosco</a>
-          <a>Central de satisfação do Cliente</a>
-        </nav>
+        <div className="footer-link-groups">
+          <nav className="footer-link-group" aria-label="Produtos LM">
+            <strong>Produtos LM</strong>
+            <a>LM Frotas</a>
+            <a>LM Assinecar</a>
+            <a>LM Seminovos</a>
+            <a>LM Veículos para Apps</a>
+            <a>LM AssineTruck</a>
+          </nav>
+          <nav className="footer-link-group wide-links" aria-label="A LM Mobilidade">
+            <strong>A LM Mobilidade</strong>
+            <div className="footer-link-columns">
+              <a>Site Principal</a>
+              <a>Quem Somos</a>
+              <a>Nossa História</a>
+              <a>Onde estamos</a>
+              <a>Investidores</a>
+              <a>Integridade</a>
+              <a>Fornecedores</a>
+              <a>Portal do Cliente</a>
+              <a>Trabalhe Conosco</a>
+              <a>Central de satisfação do Cliente</a>
+            </div>
+          </nav>
+        </div>
       </div>
       <div className="footer-bottom">
-        <div>
-          <Image src={assets.footerLogo} alt="LM" width={121} height={20} />
-          <p>2025 - Todos os Direitos Reservados</p>
+        <div className="footer-brand-column">
+          <div className="footer-brand-main">
+            <Image src={assets.footerLogo} alt="LM Mobilidade" width={121} height={20} />
+            <p>2025 - Todos os Direitos Reservados</p>
+          </div>
           <div className="policy-row">
             <a>Política de privacidade</a>
             <a>Política de Cookies</a>
@@ -352,7 +487,7 @@ function Footer() {
             <Image src={assets.badgeC} alt="" width={34} height={58} />
           </div>
         </div>
-        <div>
+        <div className="footer-social-column">
           <strong>Siga as redes da LM:</strong>
           <div className="socials">
             <Image src={assets.youtube} alt="YouTube" width={24} height={24} />
@@ -361,7 +496,8 @@ function Footer() {
           </div>
           <p>
             Você está sendo redirecionado(a) para uma página externa, que contém seus próprios
-            termos e condições de uso e avisos de privacidade.
+            termos e condições de uso e avisos de privacidade. A LM não é responsável pelo conteúdo
+            ou pelas práticas de privacidade da página de destino.
           </p>
         </div>
       </div>
