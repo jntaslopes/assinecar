@@ -46,6 +46,7 @@ button {
 
 img {
   display: block;
+  height: auto;
   max-width: 100%;
 }
 
@@ -146,6 +147,10 @@ button:disabled {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.mobile-menu-icon {
+  display: none;
 }
 
 .brand-block {
@@ -1614,20 +1619,48 @@ button:disabled {
   }
 
   .site-header {
+    justify-content: center;
     height: auto;
     min-height: 72px;
     padding: 16px;
   }
 
+  .mobile-menu-icon {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 32px;
+    justify-content: center;
+    left: 16px;
+    position: absolute;
+    top: 20px;
+    width: 32px;
+  }
+
+  .mobile-menu-icon span {
+    background: var(--purple-dark);
+    border-radius: 999px;
+    display: block;
+    height: 2px;
+    width: 20px;
+  }
+
   .brand-block {
+    justify-content: center;
+    left: 50%;
     min-width: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .product-menu {
-    left: -16px;
+    left: 50%;
     max-width: calc(100vw - 32px);
     padding: 20px;
     top: 56px;
+    transform: translateX(-50%);
     width: 336px;
   }
 
@@ -1673,12 +1706,15 @@ button:disabled {
 
   .hero-ctas {
     flex-direction: column;
+    margin-top: 24px;
+    order: 4;
   }
 
   .hero-visual {
     aspect-ratio: 773 / 487;
     height: auto;
-    margin-top: 20px;
+    margin-top: 0;
+    order: 2;
     transform: none;
     width: 100%;
   }
@@ -1709,7 +1745,26 @@ button:disabled {
   }
 
   .included-card {
-    margin-bottom: 24px;
+    height: auto;
+    margin: -28px 0 0;
+    order: 3;
+    padding: 24px;
+  }
+
+  .hero-copy {
+    display: contents;
+  }
+
+  .hero-copy h1,
+  .hero-copy > p:not(.legal),
+  .hero-price,
+  .hero-copy small {
+    order: 1;
+  }
+
+  .legal {
+    margin-top: 16px;
+    order: 5;
   }
 
   .benefit-strip {
@@ -1719,8 +1774,10 @@ button:disabled {
   .benefit-strip > div {
     border-radius: 0;
     display: grid;
-    gap: 18px;
+    gap: 12px;
     grid-template-columns: 1fr;
+    padding-bottom: 20px;
+    padding-top: 20px;
     position: static;
     transform: none;
     width: 100%;
@@ -1754,6 +1811,8 @@ button:disabled {
   }
 
   .vehicle-window {
+    cursor: grab;
+    touch-action: pan-y;
     width: 100vw;
   }
 
@@ -1796,17 +1855,7 @@ button:disabled {
   }
 
   .vehicle-arrow {
-    height: 48px;
-    top: 206px;
-    width: 48px;
-  }
-
-  .vehicle-arrow--left {
-    left: 16px;
-  }
-
-  .vehicle-arrow--right {
-    right: 16px;
+    display: none;
   }
 
   .advantages-section {
@@ -1896,7 +1945,7 @@ button:disabled {
   .confidence-panel {
     border-radius: 28px;
     min-height: 0;
-    padding: 140px 24px 32px;
+    padding: 140px 24px 24px;
   }
 
   .confidence-copy h3 {
@@ -1913,6 +1962,10 @@ button:disabled {
     flex-direction: column;
   }
 
+  .trust-stats {
+    flex: none;
+  }
+
   .trust-cards {
     gap: 12px;
   }
@@ -1923,7 +1976,13 @@ button:disabled {
   }
 
   .trust-card {
-    min-height: 124px;
+    min-height: 104px;
+  }
+
+  .trust-stat {
+    min-height: 0;
+    padding-bottom: 8px;
+    padding-top: 8px;
   }
 
   .trust-ring {
@@ -1947,6 +2006,33 @@ button:disabled {
   .consultant-card {
     border-radius: 28px;
     padding: 330px 24px 32px;
+  }
+
+  .consultant-card .primary-button {
+    width: 100%;
+  }
+
+  .faq-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-heading {
+    display: contents;
+  }
+
+  .faq-heading-copy {
+    order: 1;
+  }
+
+  .faq-list {
+    order: 2;
+  }
+
+  .faq-heading .secondary-button {
+    margin-top: 8px;
+    order: 3;
+    width: 100%;
   }
 
   .photo-a,
