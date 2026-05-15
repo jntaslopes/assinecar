@@ -31,6 +31,7 @@ const codexRuntimeHeaders =
     : [];
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   async headers() {
     return [
       {

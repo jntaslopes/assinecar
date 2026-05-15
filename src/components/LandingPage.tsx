@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import type { CSSProperties, PointerEvent as ReactPointerEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import {
   advantages,
@@ -66,6 +66,11 @@ function Header() {
 
   return (
     <header className="site-header">
+      <span className="mobile-menu-icon" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </span>
       <div className="brand-block" ref={productMenuRef}>
         <Image src={assets.logo} alt="LM AssineCar" width={110} height={22} priority />
         <button
@@ -187,10 +192,39 @@ function BenefitStrip() {
 
 function VehicleSection() {
   const [slide, setSlide] = useState(0);
+  const swipeStartRef = useRef<{ x: number; y: number } | null>(null);
   const carouselCars = [...cars, ...cars];
   const shift = `-${slide * 426}px`;
   const tabletShift = `-${114 + slide * 426}px`;
-  const mobileShift = `calc(${-40 + slide * 20}px - ${slide * 100}vw)`;
+  const mobileShift = `calc(${16 + slide * 52}px - ${slide * 100}vw)`;
+  const goToPreviousSlide = () => setSlide((current) => (current - 1 + cars.length) % cars.length);
+  const goToNextSlide = () => setSlide((current) => (current + 1) % cars.length);
+
+  function handleCarouselPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    swipeStartRef.current = { x: event.clientX, y: event.clientY };
+  }
+
+  function handleCarouselPointerUp(event: ReactPointerEvent<HTMLDivElement>) {
+    const swipeStart = swipeStartRef.current;
+    swipeStartRef.current = null;
+
+    if (!swipeStart) {
+      return;
+    }
+
+    const deltaX = event.clientX - swipeStart.x;
+    const deltaY = event.clientY - swipeStart.y;
+
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) {
+      return;
+    }
+
+    if (deltaX < 0) {
+      goToNextSlide();
+    } else {
+      goToPreviousSlide();
+    }
+  }
 
   return (
     <section className="vehicles-section" id="veiculos">
@@ -198,7 +232,14 @@ function VehicleSection() {
         <span>Escolha</span> seu próximo carro por assinatura
       </h2>
       <div className="vehicle-gallery">
-        <div className="vehicle-window">
+        <div
+          className="vehicle-window"
+          onPointerCancel={() => {
+            swipeStartRef.current = null;
+          }}
+          onPointerDown={handleCarouselPointerDown}
+          onPointerUp={handleCarouselPointerUp}
+        >
           <div
             className="vehicle-track"
             style={
@@ -269,7 +310,7 @@ function VehicleSection() {
             className="vehicle-arrow vehicle-arrow--left"
             type="button"
             aria-label="Ver carros anteriores"
-            onClick={() => setSlide((current) => (current - 1 + cars.length) % cars.length)}
+            onClick={goToPreviousSlide}
           >
             <Image src={assets.arrowLeftPurple} alt="" width={24} height={24} />
           </button>
@@ -277,7 +318,7 @@ function VehicleSection() {
             className="vehicle-arrow vehicle-arrow--right"
             type="button"
             aria-label="Ver próximos carros"
-            onClick={() => setSlide((current) => (current + 1) % cars.length)}
+            onClick={goToNextSlide}
           >
             <Image src={assets.arrowRightPurple} alt="" width={24} height={24} />
           </button>
