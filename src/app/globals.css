@@ -1697,11 +1697,24 @@ button:disabled {
   }
 
   .hero-copy h1 {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .hero-copy h1 strong {
-    font-size: 28px;
+    font-size: 25px;
+  }
+
+  .hero-copy > p:not(.legal) {
+    font-size: 15px;
+  }
+
+  .hero-price span,
+  .hero-price em {
+    font-size: 20px;
+  }
+
+  .hero-price strong {
+    font-size: 40px;
   }
 
   .hero-ctas {
@@ -1763,6 +1776,7 @@ button:disabled {
   }
 
   .legal {
+    margin-bottom: 20px;
     margin-top: 16px;
     order: 5;
   }
@@ -1822,7 +1836,7 @@ button:disabled {
   }
 
   .vehicle-card {
-    flex-basis: calc(100vw - 32px);
+    flex-basis: calc(100vw - 64px);
   }
 
   .vehicle-image--argo {
@@ -1996,7 +2010,7 @@ button:disabled {
 
   .ring-b {
     left: -500px;
-    top: 160px;
+    top: 400px;
   }
 
   .ring-c {

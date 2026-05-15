@@ -196,7 +196,7 @@ function VehicleSection() {
   const carouselCars = [...cars, ...cars];
   const shift = `-${slide * 426}px`;
   const tabletShift = `-${114 + slide * 426}px`;
-  const mobileShift = `calc(${-40 + slide * 20}px - ${slide * 100}vw)`;
+  const mobileShift = `calc(${16 + slide * 52}px - ${slide * 100}vw)`;
   const goToPreviousSlide = () => setSlide((current) => (current - 1 + cars.length) % cars.length);
   const goToNextSlide = () => setSlide((current) => (current + 1) % cars.length);
 
